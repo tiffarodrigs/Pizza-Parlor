@@ -42,4 +42,12 @@ Code: const pizza = new Pizza("pineapple", "small");
 Expected Output: Pizza {toppings: 'pineapple', size: 'small'}
 
 
+Describe: calculateCost()
+
+Test: "It should return the cost as 5 when topping is pineapple"
+Code: const pizza = new Pizza("pineapple", "small");
+pizza.calculateCost()
+Expected Output: 5
+
+
 
