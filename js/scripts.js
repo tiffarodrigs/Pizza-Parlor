@@ -11,6 +11,12 @@ const toppingPrice = {
   onion: 3,
   cheese: 2 
 }
+const sizePrice={
+  small:10,
+  medium:12,
+  large:15
+
+}
 
 Pizza.prototype.calculateCost=function(){
  let cost=0;
@@ -50,10 +56,19 @@ Pizza.prototype.calculateCost=function(){
       cost += toppingPrice.cheese;
     }
   });
+  if (this.size==="small")
+  {
+    cost +=sizePrice.small
+  }
+  else if(this.size==="medium"){
+    cost +=sizePrice.medium
+  } else if(this.size==="large"){
+    cost +=sizePrice.large
+  }
   console.log(cost);
   return cost
 }
 
-let pizza= new Pizza(["pineapple","mushroom"],"small");
+let pizza= new Pizza(["pineapple","mushroom"],"medium");
 
 console.log(pizza.calculateCost());
