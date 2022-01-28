@@ -60,6 +60,23 @@ Pizza.prototype.calculateCost = function() {
   return cost
 }
 
-let pizza = new Pizza(["pineapple", "mushroom"], "medium");
 
-console.log(pizza.calculateCost());
+
+$(document).ready(function() {
+  $("#addPizza").click(function(event){
+    event.preventDefault();
+    let inputToppings=[]
+    let inputSize = $("input[name='size']:checked").val();
+    console.log(inputSize);
+    $("input[name='toppings']:checked").each(function() {
+      inputToppings.push(this.value);
+  });
+  return inputToppings;
+
+    console.log(inputToppings);
+    let pizza = new Pizza(inputToppings,inputSize);
+    pizza.calculateCost();
+
+  });
+
+});
