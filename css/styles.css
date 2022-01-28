@@ -10,7 +10,22 @@
   margin: 5px;
 }
 }*/
+body{
+  background-color: yellow;
+}
 h1{
   font-family: 'Dancing Script', cursive;
-  
+  color:crimson;
+}
+.container
+{
+  width: 65%;
+  margin:auto;
+  background-color: white;
+}
+.selected {
+  border: 1px solid red;
+}
+.card > button{
+  border: none;
 }

@@ -57,5 +57,9 @@ $(document).ready(function() {
     $("#cost").html(outputCost);
 
   });
+  $("#pineButton").click(function(event){
+    // event.preventDefault();
+    $("#pineButton").toggleClass("selected");
+  });
 
 });
