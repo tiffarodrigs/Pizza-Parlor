@@ -48,10 +48,8 @@ $(document).ready(function() {
     console.log(inputSize);
     $("input[name='toppings']:checked").each(function() {
       inputToppings.push($(this).val());
-      //each($("input[name='language']:checked"), function(){
-      // arr.push($(this).val());
     });
-    //return inputToppings;
+
 
     console.log(inputToppings);
     let pizza = new Pizza(inputToppings, inputSize);
