@@ -50,4 +50,9 @@ pizza.calculateCost()
 Expected Output: 5
 
 
+Test: "It should return the cost as 7 when topping is pineapple and mushroom"
+Code: const pizza = new Pizza(["pineapple","mushroom], "small");
+pizza.calculateCost();
+Expected Output: 7
+
 

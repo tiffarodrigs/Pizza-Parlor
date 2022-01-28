@@ -2,12 +2,13 @@ function Pizza(toppings,size){
   this.toppings = toppings;
   this.size = size;
 }
-let pizza= new Pizza("pineapple","small");
 
-Pizza.prototype.calculateCost=function(){
-  if(pizza.toppings==="pineapple")
-  {
-    return this.cost=5;
-  }
+const toppingPrice = {
+  pineapple: 5,
+  mushroom: 2,
+  chicken: 3,
+  pepper: 2,
+  onion: 3,
+  cheese: 2 
 }
 
