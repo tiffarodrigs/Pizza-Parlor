@@ -18,67 +18,44 @@ const sizePrice = {
 
 }
 
-Pizza.prototype.calculateCost = function() {
-  let cost = 0;
-  //console.log(pizza.toppings);
+Pizza.prototype.calculateToppingCost = function() {
+  let totalToppingsCost = 0;
   const toppingArray = this.toppings;
   toppingArray.forEach(function(element) {
-    console.log(element);
-    // console.log(this.cost);
-    if (element === "pineapple") {
-      console.log("inside pine");
-
-      cost += toppingPrice.pineapple;
-      console.log("inside pine cist" + cost);
-
-    }
-    if (element === "mushroom") {
-      console.log("inside mush");
-      cost += toppingPrice.mushroom;
-    }
-    if (element === "chicken") {
-      cost += toppingPrice.chicken;
-    }
-    if (element === "pepper") {
-      cost += toppingPrice.pepper;
-    }
-    if (element === "onion") {
-      cost += toppingPrice.onion;
-    }
-    if (element === "cheese") {
-      cost += toppingPrice.cheese;
-    }
+  totalToppingsCost += toppingPrice[element];
   });
-  if (this.size === "small") {
-    cost += sizePrice.small
-  } else if (this.size === "medium") {
-    cost += sizePrice.medium
-  } else if (this.size === "large") {
-    cost += sizePrice.large
-  }
-  console.log(cost);
-  return cost;
+  return totalToppingsCost
+}
+
+Pizza.prototype.calculateSizeCost = function() {
+  let totalSizeCost =0;
+  totalSizeCost += sizePrice[this.size];
+  return totalSizeCost;
+}
+
+Pizza.prototype.pizzaCost = function()
+{
+  return this.calculateToppingCost()+this.calculateSizeCost();
 }
 
 
-
 $(document).ready(function() {
-  $("#addPizza").click(function(event){
+  $("#addPizza").click(function(event) {
     event.preventDefault();
-    let inputToppings=[]
+    let inputToppings = []
     let outputCost;
     let inputSize = $("input[name='size']:checked").val();
     console.log(inputSize);
     $("input[name='toppings']:checked").each(function() {
       inputToppings.push($(this).val());
       //each($("input[name='language']:checked"), function(){
-       // arr.push($(this).val());
-  });
-  //return inputToppings;
+      // arr.push($(this).val());
+    });
+    //return inputToppings;
 
     console.log(inputToppings);
-    let pizza = new Pizza(inputToppings,inputSize);
-    outputCost=pizza.calculateCost();
+    let pizza = new Pizza(inputToppings, inputSize);
+    outputCost = pizza.pizzaCost();
     $("#cost").html(outputCost);
 
   });
