@@ -46,3 +46,7 @@ label{
 .imgSize{
   width:50px;
 }
+
+#pizzaDetail{
+  display: none;
+}

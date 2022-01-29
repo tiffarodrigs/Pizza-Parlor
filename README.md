@@ -55,9 +55,36 @@ Code: const pizza = new Pizza(["pineapple","mushroom], "small");
 pizza.calculateCost();
 Expected Output: 7
 
-Test: "It should return the cost as 7 when topping is pineapple and mushroom and size is medium"
+Test: "It should return the cost as 19 when topping is pineapple and mushroom and size is medium"
 Code: const pizza = new Pizza(["pineapple","mushroom], "medium");
 pizza.calculateCost();
 Expected Output: 19
 
+Describe : calculateToppingCost()
 
+Test: "It should return the cost as 7 when topping is pineapple and mushroom
+Code: calculateToppingCost();
+Expected Output: 7
+
+
+
+Describe : calculateSizeCost()
+
+Test: "It shouls return cost as 10 when size is small
+Code: calculateSizeCost(cartTicketsList);
+Expected Output: 10
+
+
+
+Describe : displayTicketList(cartTicketsList)
+
+Test: "It should display the created pizza in the list below
+Code: displayTicketList(cartTicketsList);
+Expected Output: Display list of ordered pizza.
+
+
+Describe : totalCartPrice()
+
+Test: "It should display 30  when two small pineapple pizza are ordered
+Code: totalCartPrice();
+Expected Output: 30

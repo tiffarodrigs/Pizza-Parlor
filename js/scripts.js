@@ -1,28 +1,29 @@
-function Cart(){
-  this.pizzaList={};
-  this.currentId=0;
+function Cart() {
+  this.pizzaList = {};
+  this.currentId = 0;
+  this.totalPrice =0;
 
 }
 
-Cart.prototype.assignId=function(){
+Cart.prototype.assignId = function() {
   this.currentId += 1;
   return this.currentId;
 }
 
-Cart.prototype.addPizza=function(pizza){
-  pizza.id=this.assignId();
-  this.pizzaList[pizza.id]=pizza;
-  
+Cart.prototype.addPizza = function(pizza) {
+  pizza.id = this.assignId();
+  this.pizzaList[pizza.id] = pizza;
+
 }
-Cart.prototype.findPizza=function(id){
-  if(this.pizzaList[id]!= undefined){
+Cart.prototype.findPizza = function(id) {
+  if (this.pizzaList[id] != undefined) {
     return this.pizzaList[id]
   }
   return false;
 }
 
-Cart.prototype.deletePizza=function(id){
-  if(this.pizzaList[id]!= undefined){
+Cart.prototype.deletePizza = function(id) {
+  if (this.pizzaList[id] != undefined) {
     delete this.pizzaList[id]
     return true;
   }
@@ -56,49 +57,55 @@ Pizza.prototype.calculateToppingCost = function() {
   let totalToppingsCost = 0;
   const toppingArray = this.toppings;
   toppingArray.forEach(function(element) {
-  totalToppingsCost += toppingPrice[element];
+    totalToppingsCost += toppingPrice[element];
   });
   return totalToppingsCost
 }
 
 Pizza.prototype.calculateSizeCost = function() {
-  let totalSizeCost =0;
+  let totalSizeCost = 0;
   totalSizeCost += sizePrice[this.size];
   return totalSizeCost;
 }
 
-Pizza.prototype.pizzaCost = function()
-{
-  return this.calculateToppingCost()+this.calculateSizeCost();
+Pizza.prototype.pizzaCost = function() {
+  return this.calculateToppingCost() + this.calculateSizeCost();
+}
+Cart.prototype.totalCartPrice=function(pizza){
+this.totalPrice += pizza.pizzaCost();
+return this.totalPrice;
+}
+function displayPizzaList(cartObj) {
+  console.log("cart object  ", cartObj);
+  console.log("cart object pizz list ", cartObj.pizzaList);
+  let htmlPizzaList = ""
+  Object.keys(cartObj.pizzaList).forEach(function(key) {
+    let pizzaObj = cartObj.findPizza(key);
+    console.log("pizza object  ", pizzaObj);
+    htmlPizzaList += "<li id=" + pizzaObj.id + ">" + "Create your own pizza" + pizzaObj.size + "</li>";
+  });
+  $("ul#pizzaList").html(htmlPizzaList)
 }
 
-function displayPizzaList(cartObj){
-  console.log("cart object  ",cartObj);
-  console.log("cart object pizz list ",cartObj.pizzaList);
-  let htmlPizzaList=""
-Object.keys(cartObj.pizzaList).forEach(function(key){
-  let pizzaObj=cartObj.findPizza(key);
-  console.log("pizza object  ",pizzaObj);
-
-  htmlPizzaList += "<li id=" + pizzaObj.id + ">"+  "Create your own pizza"+ pizzaObj.size +  "</li>";
-
-});
-$("ul#pizzaList").html(htmlPizzaList)
+function showPizzaDetail(pizzaid) {
+  let pizzaObj = cart.findPizza(pizzaid);
+  $("#pizzaDetail").show();
+  $(".size").html(pizzaObj.size);
+  $(".topping").html(pizzaObj.toppings);
+  $(".price").html(pizzaObj.pizzaCost());
 }
 
-function showPissaDetail(){
-  
-}
-function addHandler(){
-  $("#pizzaList").on("click","li",function(){
+function addHandler() {
+  $("ul#pizzaList").on("click", "li", function() {
 
-    showPissaDetail();
+    showPizzaDetail(this.id);
   });
 
 }
-
+let cart = new Cart();
 $(document).ready(function() {
-  let cart=new Cart();
+
+  addHandler();
   $("#addPizza").click(function(event) {
     event.preventDefault();
     let inputToppings = []
@@ -112,7 +119,9 @@ $(document).ready(function() {
     let myPizza = new Pizza(inputToppings, inputSize);
     cart.addPizza(myPizza);
     displayPizzaList(cart)
-    outputCost = myPizza.pizzaCost();
+    //outputCost = myPizza.pizzaCost();
+    outputCost = cart.totalCartPrice(myPizza);
+    //totalCartPrice(myPizza)
     $("#cost").html(outputCost);
 
   });
