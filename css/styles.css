@@ -1,18 +1,6 @@
-/*body {
-  background-image: url('../img/adobe-127952751.jpeg');
- 
-}
-#container
-{
-  border: black;
-  padding: 10%;
-  border-style: dashed;
-  margin: 5px;
-}
 
-}*/
 body{
-  background-color: yellow;
+  background-color: rgb(245, 245, 190);
 }
 h1{
   font-family: 'Dancing Script', cursive;
@@ -28,19 +16,8 @@ h1{
 .selected {
   border: 1px solid red;
 }
-.card > button{
-  border: none;
-}
-.card-deck{
-  width: 180;
-}
 
-/*input[type="checkbox"],input[type="radio"]{
-  opacity: 0;
-}
-input[type="checkbox"]:checked{
-  opacity: 1;
-}*/
+
 
 .toppings-container, .size-container{
   display: flex;

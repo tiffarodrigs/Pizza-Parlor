@@ -1,3 +1,37 @@
+function Cart(){
+  this.pizzaList={};
+  this.currentId=0;
+
+}
+
+Cart.prototype.assignId=function(){
+  this.currentId += 1;
+  return this.currentId;
+}
+
+Cart.prototype.addPizza=function(pizza){
+  pizza.id=this.assignId();
+  this.pizzaList[pizza.id]=pizza;
+  
+}
+Cart.prototype.findPizza=function(id){
+  if(this.pizzaList[id]!= undefined){
+    return this.pizzaList[id]
+  }
+  return false;
+}
+
+Cart.prototype.deletePizza=function(id){
+  if(this.pizzaList[id]!= undefined){
+    delete this.pizzaList[id]
+    return true;
+  }
+  return false;
+}
+
+
+
+
 function Pizza(toppings, size) {
   this.toppings = toppings;
   this.size = size;
@@ -38,8 +72,33 @@ Pizza.prototype.pizzaCost = function()
   return this.calculateToppingCost()+this.calculateSizeCost();
 }
 
+function displayPizzaList(cartObj){
+  console.log("cart object  ",cartObj);
+  console.log("cart object pizz list ",cartObj.pizzaList);
+  let htmlPizzaList=""
+Object.keys(cartObj.pizzaList).forEach(function(key){
+  let pizzaObj=cartObj.findPizza(key);
+  console.log("pizza object  ",pizzaObj);
+
+  htmlPizzaList += "<li id=" + pizzaObj.id + ">"+  "Create your own pizza"+ pizzaObj.size +  "</li>";
+
+});
+$("ul#pizzaList").html(htmlPizzaList)
+}
+
+function showPissaDetail(){
+  
+}
+function addHandler(){
+  $("#pizzaList").on("click","li",function(){
+
+    showPissaDetail();
+  });
+
+}
 
 $(document).ready(function() {
+  let cart=new Cart();
   $("#addPizza").click(function(event) {
     event.preventDefault();
     let inputToppings = []
@@ -50,8 +109,10 @@ $(document).ready(function() {
       inputToppings.push($(this).val());
     });
     console.log(inputToppings);
-    let pizza = new Pizza(inputToppings, inputSize);
-    outputCost = pizza.pizzaCost();
+    let myPizza = new Pizza(inputToppings, inputSize);
+    cart.addPizza(myPizza);
+    displayPizzaList(cart)
+    outputCost = myPizza.pizzaCost();
     $("#cost").html(outputCost);
 
   });
