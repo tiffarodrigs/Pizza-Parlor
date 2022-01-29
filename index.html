@@ -34,11 +34,57 @@
         </div>
 
         <p class="h5">Choose your topping </p>
-        <div class="card" style="width: 18rem;" id="pineButton">
-          <button class="card-body btn btn-light" >
-            <h5 class="card-title">Pineapple </h5>
-          </button>
+        <div class="card-deck">
+          <div class="card">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
         </div>
+        <!--<div id="toppings">
+          <div class="card" style="width: 18rem;" id="pineButton">
+            <button class="card-body btn btn-light" >
+              <h5 class="card-title">Pineapple </h5>
+            </button>
+          </div>
+          <div class="card" style="width: 18rem;" id="mushButton">
+            <button class="card-body btn btn-light" >
+              <h5 class="card-title">Mushroom </h5>
+            </button>
+          </div>
+          <div class="card" style="width: 18rem;" id="chickenButton">
+            <button class="card-body btn btn-light" >
+              <h5 class="card-title">Chicken </h5>
+            </button>
+          </div>
+          <div class="card" style="width: 18rem;" id="peppButton">
+            <button class="card-body btn btn-light" >
+              <h5 class="card-title">Pepper </h5>
+            </button>
+          </div>
+          <div class="card" style="width: 18rem;" id="onionButton">
+            <button class="card-body btn btn-light" >
+              <h5 class="card-title">Onion </h5>
+            </button>
+          </div>
+          <div class="card" style="width: 18rem;" id="cheeseButton">
+            <button class="card-body btn btn-light" >
+              <h5 class="card-title">Cheese </h5>
+            </button>
+          </div>
+        </div>-->
+        
         <div>
           <input type="checkbox" id="pineapple" value="pineapple" name="toppings" checked>
           <label for="pineapple">Pineapple</label>
@@ -63,6 +109,7 @@
           <input type="checkbox" id="cheese" value="cheese" name="toppings">
           <label for="cheese">cheese</label>
         </div>
+        
         <button type=button id="addPizza">Add to cart </button>
 
         <div>Price: <span id="cost"></span></div>

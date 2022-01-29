@@ -57,8 +57,9 @@ $(document).ready(function() {
     $("#cost").html(outputCost);
 
   });
-  $("#pineButton").click(function(event){
+  $("#toppings").click(function(event){
     // event.preventDefault();
+    console.log($("#pineButton"), event.currentTarget)
     $("#pineButton").toggleClass("selected");
   });
 

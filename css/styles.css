@@ -9,6 +9,7 @@
   border-style: dashed;
   margin: 5px;
 }
+
 }*/
 body{
   background-color: yellow;
@@ -28,4 +29,14 @@ h1{
 }
 .card > button{
   border: none;
+}
+.card-deck{
+  width: 180;
+}
+
+input[type="checkbox"] {
+  opacity: 0;
+}
+input[type="checkbox"]:checked::after{
+  content: "Checked";
 }
