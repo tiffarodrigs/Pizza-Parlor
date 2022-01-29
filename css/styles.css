@@ -21,6 +21,7 @@ h1{
 .container
 {
   width: 65%;
+  min-height: 1000px;
   margin:auto;
   background-color: white;
 }
@@ -34,16 +35,17 @@ h1{
   width: 180;
 }
 
-input[type="checkbox"],input[type="radio"]{
+/*input[type="checkbox"],input[type="radio"]{
   opacity: 0;
 }
 input[type="checkbox"]:checked{
   opacity: 1;
-}
+}*/
 
 .toppings-container, .size-container{
   display: flex;
   flex-wrap: wrap;
+  margin: 30px 0px 30px 0px;
 } 
 .toppings-container div, .size-container div {
   background-color: #f7f7f7;
@@ -63,4 +65,7 @@ input[type="checkbox"]:checked{
 }
 label{
   font-size: 24px;
+}
+.imgSize{
+  width:50px;
 }

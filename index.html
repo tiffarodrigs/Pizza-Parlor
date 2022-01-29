@@ -20,20 +20,32 @@
         <p class="h5">Select your pizza size</p>
 
         <div class="size-container">
-        <div>
-          <input type="radio" id="small" name="size" value="small" checked>
-          <label for="small">small</label>
-        </div>
+          <div>
+            <img class="imgSize" src="img/small.png"  alt="small" >
+            <input type="radio" id="small" name="size" value="small" checked>
+            <label for="small">Small</label>
+            <small>
+              $10
+            </small>
+          </div>
 
-        <div>
-          <input type="radio" id="medium" name="size" value="medium">
-          <label for="medium">medium</label>
-        </div>
+          <div>
+            <img class="imgSize" src="img/medium.png"  alt="medium" >
+            <input type="radio" id="medium" name="size" value="medium">
+            <label for="medium">Medium</label>
+            <small>
+              $12
+            </small>
+          </div>
 
-        <div>
-          <input type="radio" id="large" name="size" value="large">
-          <label for="large">large</label>
-        </div>
+          <div>
+            <img class="imgSize" src="img/large.png"  alt="large" >
+            <input type="radio" id="large" name="size" value="large">
+            <label for="large">Large</label>
+            <small>
+              $15
+            </small>
+          </div>
         </div>
 
         <p class="h5">Choose your topping </p>
@@ -75,32 +87,50 @@
         <div class="toppings">
           <img src="img/pineapple.jpeg" alt="pineapple" >
           <input type="checkbox" id="pineapple" value="pineapple" name="toppings" checked>
-          <label for="pineapple" style="background-image:'src(./img/pineapple.jpeg)' ;">Pineapple</label>
+          <label for="pineapple" >Pineapple</label>
+          <small>
+            $5
+          </small>
         </div>
         <div class="toppings">
-          <img src="img/mushroom.jpeg" alt="mushroom">
+          <img  src="img/mushroom.jpeg" alt="mushroom">
           <input type="checkbox" id="mushroom" value="mushroom" name="toppings">
-          <label for="mushroom">mushroom</label>
+          <label for="mushroom">Mushroom</label>
+          <small>
+            $2
+          </small>
         </div>
         <div class="toppings">
-          <img src="img/chicken.jpeg" alt="chicken">
+          <img  src="img/chicken.jpeg" alt="chicken">
           <input type="checkbox" id="chicken" value="chicken" name="toppings">
           <label for="chicken">Chicken</label>
+          <small>
+            $3
+          </small>
         </div>
         <div class="toppings">
-          <img src="img/peppers.jpeg" alt="pepper">
+          <img  src="img/peppers.jpeg" alt="pepper">
           <input type="checkbox" id="pepper" value="pepper" name="toppings">
-          <label for="pepper">pepper</label>
+          <label for="pepper">Pepper</label>
+          <small>
+            $2
+          </small>
         </div>
         <div class="toppings">
           <img src="img/onions.jpeg" alt="onion">
           <input type="checkbox" id="onion" value="onion" name="toppings">
-          <label for="onion">onion</label>
+          <label for="onion">Onion</label>
+          <small>
+            $3
+          </small>
         </div>
         <div class="toppings">
           <img src="img/cheese.jpeg" alt="cheese">
           <input type="checkbox" id="cheese" value="cheese" name="toppings">
-          <label for="cheese">cheese</label>
+          <label for="cheese">Cheese</label>
+          <small>
+            $2
+          </small>
         </div></div>
         
         <button type=button id="addPizza">Add to cart </button>

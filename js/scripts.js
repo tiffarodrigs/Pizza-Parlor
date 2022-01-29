@@ -49,38 +49,13 @@ $(document).ready(function() {
     $("input[name='toppings']:checked").each(function() {
       inputToppings.push($(this).val());
     });
-    
-
-
     console.log(inputToppings);
     let pizza = new Pizza(inputToppings, inputSize);
     outputCost = pizza.pizzaCost();
     $("#cost").html(outputCost);
 
   });
-  $(".toppings-container").children().each(function(e,element) {
-    $(element).click(function(){
-      $(element).toggleClass("selected");
-      $(element).prop('aria-pressed', 'true')
-     // $("#rowchkall").change(function(){
-        $("input:checkbox[name='toppings']").prop('checked', this.checked);
-
-        $( ".toppings" ).on( "click", function( event ) {
-          event.preventDefault();
-          $("input:checkbox[name='toppings']").prop('checked', this.checked);
-          console.log("ffff"+ $( this ).text() );
-        
-    });
- 
-   
-  // //  .click((e) => $(e).toggleClass("selected") );
-  // $("#toppings").click(function(event){
-  //   // event.preventDefault();
-  //   console.log($("#pineButton"), event.currentTarget)
-  //   $("#pineButton").toggleClass("selected");
 
 
-  });
-  });
 
 });
