@@ -82,7 +82,7 @@ function displayPizzaList(cartObj) {
   Object.keys(cartObj.pizzaList).forEach(function(key) {
     let pizzaObj = cartObj.findPizza(key);
     console.log("pizza object  ", pizzaObj);
-    htmlPizzaList += "<li id=" + pizzaObj.id + ">" + "Create your own pizza" + pizzaObj.size + "</li>";
+    htmlPizzaList += "<li id=" + pizzaObj.id + ">" + "Create your own pizza : " + pizzaObj.size + "</li>";
   });
   $("ul#pizzaList").html(htmlPizzaList)
 }
@@ -91,7 +91,8 @@ function showPizzaDetail(pizzaid) {
   let pizzaObj = cart.findPizza(pizzaid);
   $("#pizzaDetail").show();
   $(".size").html(pizzaObj.size);
-  $(".topping").html(pizzaObj.toppings);
+  console.log("pizzObj topp",pizzaObj.toppings.join());
+  $(".topping").html(pizzaObj.toppings.join());
   $(".price").html(pizzaObj.pizzaCost());
 }
 
@@ -123,6 +124,7 @@ $(document).ready(function() {
     outputCost = cart.totalCartPrice(myPizza);
     //totalCartPrice(myPizza)
     $("#cost").html(outputCost);
+    $("#resultBorder").show();
 
   });
 

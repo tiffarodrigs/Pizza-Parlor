@@ -49,4 +49,24 @@ label{
 
 #pizzaDetail{
   display: none;
+ 
+}
+
+
+li{
+ cursor: pointer;
+  text-decoration: underline;
+  /* color: #0088cc; */
+}
+li:hover
+{
+  color: crimson;
+}
+#resultBorder {
+  display:none;
+  border: 1px solid red;
+  border-radius: 10px;
+  margin: 10px 0px;
+  padding: 5px;
+
 }
