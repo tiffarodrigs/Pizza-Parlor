@@ -1,72 +1,87 @@
-
-body{
+body {
   background-color: rgb(245, 245, 190);
+  font-family: 'Nunito', sans-serif;
 }
-h1{
+
+h1 {
   font-family: 'Dancing Script', cursive;
-  color:crimson;
+  color: crimson;
+  margin: 15px 0px 35px 0px;
 }
-.container
-{
+h5{
+  font-weight: bold;
+  color: crimson;
+}
+
+.container {
   width: 65%;
   min-height: 1000px;
-  margin:auto;
+  margin: auto;
   background-color: white;
 }
+
 .selected {
   border: 1px solid red;
 }
 
-
-
-.toppings-container, .size-container{
+.toppings-container,
+.size-container {
   display: flex;
   flex-wrap: wrap;
-  margin: 30px 0px 30px 0px;
-} 
-.toppings-container div, .size-container div {
+  margin: 15px 0px 35px 0px;
+}
+
+.toppings-container div,
+.size-container div {
   background-color: #f7f7f7;
   min-width: 30%;
   border-radius: 5px;
-  margin:2px;
+  margin: 2px;
   cursor: pointer;
 }
-.toppings-container div:not(.selected), .size-container div:not(.selected){
-  border: 1px solid rgb(238, 238, 238) ;
+
+.toppings-container div:not(.selected),
+.size-container div:not(.selected) {
+  border: 1px solid rgb(238, 238, 238);
 }
+
 .toppings-container img {
   border-radius: 50px;
   margin: 5px;
   height: 50px;
   width: 50px;
 }
-label{
+
+label {
   font-size: 24px;
 }
-.imgSize{
-  width:50px;
+
+.imgSize {
+  width: 50px;
 }
 
-#pizzaDetail{
+#pizzaDetail {
   display: none;
- 
+  margin-bottom: 10px;
+
 }
 
-
-li{
- cursor: pointer;
+li {
+  cursor: pointer;
   text-decoration: underline;
-  /* color: #0088cc; */
 }
-li:hover
-{
+
+li:hover {
   color: crimson;
 }
+
 #resultBorder {
-  display:none;
+  display: none;
   border: 1px solid red;
   border-radius: 10px;
   margin: 10px 0px;
   padding: 5px;
-
+}
+p{
+  margin-bottom: 2px;
 }
