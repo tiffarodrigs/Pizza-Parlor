@@ -22,6 +22,8 @@ _a website for a pizza company where a user can choose one or more individual to
 * _Open index.html.in your browser_
 
 ## Web Page Link
+[https://tiffarodrigs.github.io/Pizza-Parlor/]
+(https://tiffarodrigs.github.io/Pizza-Parlor/)
 
 
 
